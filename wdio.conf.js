@@ -1,4 +1,3 @@
-// export const config = {
 exports.config = {
     //
     // ====================
@@ -6,7 +5,7 @@ exports.config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-
+    
     //
     // ==================
     // Specify Test Files
@@ -24,7 +23,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './../tests/*.test.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -63,7 +62,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'error',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
@@ -87,7 +86,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://ej2.syncfusion.com',
+    baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -104,7 +103,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-
+    
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -125,18 +124,9 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: [
-        'spec',
-        [
-            'junit',
-            {
-                outputDir: './report',
-                outputFileFormat: function (options) {
-                    return `results-${options.cid}.xml`;
-                },
-            },
-        ],
-    ],
+    reporters: ['spec','junit'],
+
+    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

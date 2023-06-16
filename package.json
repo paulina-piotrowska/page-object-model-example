@@ -1,13 +1,19 @@
 {
-  "name": "my-new-project",
-  "version": "0.0.1",
-  "description": "POM with WDIO",
-  "private": false,
+  "name": "module-6",
+  "version": "1.0.0",
+  "description": "Module 6: WebdriverIO: Page Object Model",
+  "license": "EPAM Systems",
+  "private": true,
   "scripts": {
-    "test": "wdio run src/config/wdio.conf.js"
+    "test": "wdio run src/configs/wdio.conf.js",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "expect-webdriverio": "^4.2.6"
   },
   "devDependencies": {
     "@wdio/cli": "^8.11.2",
+    "@wdio/junit-reporter": "^8.11.0",
     "@wdio/local-runner": "^8.11.2",
     "@wdio/mocha-framework": "^8.11.0",
     "@wdio/spec-reporter": "^8.11.2",
